@@ -7,7 +7,7 @@
 
 - cd to the working directory in which you have neuroimaging data
 
-- Pull the image and mount working directory as /home/barin in the container
+- Pull the image and mount working directory as /home/brain in the container
 
 ```
 docker run -it --rm -v $PWD:/home/brain kytk/docker-fsl:6.0.6.2
