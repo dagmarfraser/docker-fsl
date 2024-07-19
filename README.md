@@ -37,7 +37,11 @@ flirt -version.
 ```
 docker run --rm -v $PWD:/home/brain -t fsl-image fslinfo /home/brain/MNI152_T1_1.25mm_brain.nii.gz
 ```
-
+ - lets put it on docker hub
+ ```
+ docker tag fsl-image daralathas/fsl-image:1
+ docker push daralathas/fsl-image:1
+```
 
 To exit from this running container, you can use ctrl+c, ctrl+d or enter exit in the terminal.
 
