@@ -28,3 +28,4 @@ echo $FSLDIR.
 ```
 flirt -version.
 ```
+To exit from this running container, you can use ctrl+c, ctrl+d or enter exit in the terminal.
