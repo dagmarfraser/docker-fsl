@@ -42,6 +42,19 @@ docker run --rm -v $PWD:/home/brain -t fsl-image fslinfo /home/brain/MNI152_T1_1
  docker tag fsl-image daralathas/fsl-image:1
  docker push daralathas/fsl-image:1
 ```
+And then on BLUEBear make the apptainer .sif file... and test it
+
+```
+apptainer pull docker://daralathas/fsl-image:1
+apptainer exec fsl-image_1.sif python --version
+apptainer shell fsl-image_1.sif
+python --version
+```
+lets have a shell within - this path needs to exist in the container!
+```
+$ apptainer shell --bind $PWD:/home/brain fsl-image_1.sif
+Apptainer > fslinfo /workdir/MNI152_T1_1.25mm_brain.nii.gz
+```
 
 To exit from this running container, you can use ctrl+c, ctrl+d or enter exit in the terminal.
 
