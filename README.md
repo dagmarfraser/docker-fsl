@@ -2,6 +2,11 @@
 
 - A container for FSL
 
+  use the Dockerfile with this command
+```
+docker build -t fsl-image .
+```
+We probably want -t 3.0.6.5 in future so we cna have multiple versions
 
 ## How to use this container
 
@@ -29,3 +34,5 @@ echo $FSLDIR.
 flirt -version.
 ```
 To exit from this running container, you can use ctrl+c, ctrl+d or enter exit in the terminal.
+
+
