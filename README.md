@@ -57,6 +57,36 @@ $ apptainer shell --bind $PWD:/home/brain fsl-image_1.sif
 Apptainer> fslinfo /workdir/MNI152_T1_1.25mm_brain.nii.gz
 ```
 
+So far so good
+
+Now we want to see the Apptainer'd FSL GUI in the remote machine.. so on the Mac that should be easy
+
+```
+% ssh -X fraserds@bluebear.bham.ac.uk
+$ cd /rds/projects/f/fraserds-mpo-evaluation
+```
+- Lets try some OpenGl, Some Nvidia ... some software rendiring?
+```
+$ apptainer run --bind /tmp/.X11-unix:/tmp/.X11-unix \
+              --bind $PWD:/home/brain \
+              --env="DISPLAY=$DISPLAY" \
+              --env="FSLEYES_FORCE_OPENGL_VERSION=2.1" \
+              fsl-image_1.sif fsleyes
+
+$ apptainer run --bind /tmp/.X11-unix:/tmp/.X11-unix \
+              --bind $PWD:/home/brain \
+              --env="DISPLAY=$DISPLAY" \
+              --env="LIBGL_ALWAYS_SOFTWARE=1" \
+              fsl-image_1.sif fsleyes
+
+$ apptainer exec --nv \
+               --bind /tmp/.X11-unix:/tmp/.X11-unix \
+               --bind $PWD:/home/brain \
+               --env="DISPLAY=$DISPLAY" \
+              fsl-image_1.sif fsleyes
+```
+We get splash screen... but then some errors.... so no joy... but we are close!
+
 To exit from this running container, you can use ctrl+c, ctrl+d or enter exit in the terminal.
 
 
