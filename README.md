@@ -65,6 +65,16 @@ Now we want to see the Apptainer'd FSL GUI in the remote machine.. so on the Mac
 % ssh -X fraserds@bluebear.bham.ac.uk
 $ cd /rds/projects/f/fraserds-mpo-evaluation
 ```
+We want to run an interactive job.. so lets play nice and not work on the head node.
+
+Our project will need to be GPU active to allow GPUs to be used.(https://docs.bear.bham.ac.uk/bluebear/bbgpu/?h=gpu)
+
+```
+$ module load slurm-interactive
+$ fisbatch_screen --nodes=1-1 --ntasks=2 --time=1:0:0
+
+```
+
 - Lets try some OpenGl, Some Nvidia ... some software rendiring?
 ```
 $ apptainer run --bind /tmp/.X11-unix:/tmp/.X11-unix \
