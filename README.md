@@ -59,7 +59,7 @@ Apptainer> fslinfo /workdir/MNI152_T1_1.25mm_brain.nii.gz
 
 So far so good
 
-Now we want to see the Apptainer'd FSL GUI in the remote machine.. so on the Mac that should be easy
+Now we want to see the Apptainer'd FSL GUI in the remote machine.. so on the Mac that should be easy. Install XQuartz and use the -X option to pipe the X11 back to us.
 
 ```
 % ssh -X fraserds@bluebear.bham.ac.uk
