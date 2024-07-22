@@ -97,6 +97,22 @@ $ apptainer exec --nv \
 ```
 We get splash screen... but then some errors.... so no joy... but we are close!
 
+According to this page...
+
+https://docs.bear.bham.ac.uk/bluebear/bbgpu/
+we just add 
+```
+#SBATCH --qos=bbgpu
+#SBATCH --account=_projectname_
+#SBATCH --gres=_gpu_
+```
+So
+```
+$ module load slurm-interactive
+$ fisbatch_screen --nodes=1-1 --ntasks=2 --time=1:0:0 --qos=bbgpu --account=fraserds-mpo-evaluation --gres=gpu:a100:1
+```
+Alas still looks like we are missing wxPython...
+
 To exit from this running container, you can use ctrl+c, ctrl+d or enter exit in the terminal.
 
 
