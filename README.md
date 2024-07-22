@@ -111,7 +111,7 @@ So
 $ module load slurm-interactive
 $ fisbatch_screen --nodes=1-1 --ntasks=2 --time=1:0:0 --qos=bbgpu --account=fraserds-mpo-evaluation --gres=gpu:a100:1
 ```
-Alas still looks like we are missing wxPython...
+Alas still looks like we are missing wxPython... so let's do a new Docker with X11 extra explicitly baked in!
 
 To exit from this running container, you can use ctrl+c, ctrl+d or enter exit in the terminal.
 
