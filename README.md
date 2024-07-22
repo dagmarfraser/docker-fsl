@@ -6,13 +6,13 @@
 ```
 docker build -t fsl-image .
 ```
-We probably want  3.0.6.5 in future so we cna have multiple versions
+We probably want  3.0.6.5 explicitly tagged in future so we can have multiple versions
 
 ## How to use this container
 
 - cd to the working directory in which you have neuroimaging data
 
-- Pull the image and **mount working directory as /home/brain in the container**
+- Pull the image and also **mount working directory as /home/brain in the container**
 
 ```
 docker run -it --rm -v $PWD:/home/brain fsl-image
