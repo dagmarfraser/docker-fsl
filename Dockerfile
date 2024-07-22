@@ -1,6 +1,6 @@
 ## Dockerfile to make "docker-fsl"
 ## This file makes a container image of FSL
-## FSL 6.0.6.2
+## FSL 6.0.6.5
 ## K. Nemoto 05 Feb 2023 
 ## D. S. Fraser 18th July 2024
 
